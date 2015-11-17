@@ -1,4 +1,4 @@
-package actors 
+﻿package actors 
 {
 	import utils.Controller;	
 	import flash.events.Event;
@@ -23,17 +23,18 @@ package actors
 		}
 		private function loop(e:Event):void 
 		{
-			if (controller.up)
+			if (controller.up && y > -10)
 			{
-				speed = -15;
+				speed = -7;
 			}
-			else if(controller.down)
+			else if(controller.down && y < stage.stageHeight-10)
 			{
-				speed = 15;
+				speed = 7;
 			}else
 			{
-				if (speed > 0) speed--;
-				if (speed < 0) speed++;
+				speed = 0;
+				/*if (speed > 0) speed--;
+				if (speed < 0) speed++;*/
 				
 			}
 			if (controller.fire)
